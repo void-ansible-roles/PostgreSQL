@@ -7,4 +7,4 @@
     - python-psycopg2
 
 - name: Enable PostgreSQL
-  file: src=/etc/sv/postgresql dest=/var/service/postgresql owner=root group=root state=link
+  file: src=/etc/sv/postgresql dest=/var/service/postgresql state=link
