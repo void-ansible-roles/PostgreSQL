@@ -1,10 +1,14 @@
 ---
 - name: Install dependencies
-  xbps: name={{ item }} state=present
-  with_items:
-    - acl-progs
-    - postgresql
-    - python-psycopg2
+  xbps:
+    pkg:
+      - acl-progs
+      - postgresql
+      - python-psycopg2
+    state: present
 
 - name: Enable PostgreSQL
-  file: src=/etc/sv/postgresql dest=/var/service/postgresql state=link
+  file:
+    src: /etc/sv/postgresql
+    dest: /var/service/postgresql
+    state: link
